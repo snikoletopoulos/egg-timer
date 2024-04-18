@@ -30,16 +30,15 @@ class ViewController: UIViewController {
 
   func updateTime(_ timer: Timer) {
     time += 1
+    guard let eggTime = eggSeconds[selectedEggType!] else { return }
 
-    if let eggTime = eggSeconds[selectedEggType!] {
-      let progress = Float(time) / Float(eggTime)
-      progressBar.progress = progress
+    let progress = Float(time) / Float(eggTime)
+    progressBar.progress = progress
 
-      if progress >= 1 {
-        timer.invalidate()
-        label.text = "Done!"
-        playSound()
-      }
+    if progress >= 1 {
+      timer.invalidate()
+      label.text = "Done!"
+      playSound()
     }
   }
 
