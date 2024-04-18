@@ -8,7 +8,7 @@ class ViewController: UIViewController {
   var player: AVAudioPlayer?
 
   let eggSeconds = [
-    "Soft": 5,
+    "Soft": 5 * 60,
     "Medium": 7 * 60,
     "Hard": 12 * 60,
   ]
